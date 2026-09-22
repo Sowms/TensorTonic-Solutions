@@ -16,7 +16,7 @@ def train_logistic_regression(X: np.ndarray, y: np.ndarray, lr: float = 0.1, ste
         z = np.dot(X, w) + b
         h = _sigmoid(z)
 
-        dw = X.T @ (h-y) / len(y)
+        dw = X.T @ (h-y) / len(X)
         db = np.mean(h-y)
 
         w = w - lr*dw
